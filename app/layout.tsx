@@ -20,36 +20,39 @@ const alexandria = Alexandria({
 const plex = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-plex",
+  variable: "--font-plex-arabic",
   display: "swap",
 });
 
 const kufi = Reem_Kufi({
   subsets: ["arabic", "latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-kufi",
+  variable: "--font-reem-kufi",
   display: "swap",
 });
 
+// adjustFontFallback: false → Next 13.5 has no fallback metrics for these newer fonts
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   variable: "--font-bricolage",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-instrument-serif",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 

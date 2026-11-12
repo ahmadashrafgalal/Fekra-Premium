@@ -1173,7 +1173,13 @@ export default function HomePage() {
                     )}
                     <span className="relative z-10">
                       {d.label}{" "}
-                      <span className="font-mono text-[10px] opacity-70">({d.count})</span>
+                      <span className="font-mono text-[10px] opacity-70">
+                        (
+                        {d.id === "all"
+                          ? GALLERY_WORKS.length
+                          : GALLERY_WORKS.filter((w) => w.cat === d.id).length}
+                        )
+                      </span>
                     </span>
                   </button>
                 );
