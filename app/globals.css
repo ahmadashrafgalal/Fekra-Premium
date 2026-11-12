@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #090b2e;
+    color: #ffffff;
+  }
+
+  body {
+    font-family: var(--font-plex-arabic), sans-serif;
+    background-color: #090b2e;
+    color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-alexandria), sans-serif;
+  }
+}
+
+/* Subtle architectural grid background mask for structured look */
+.fekra-grid-bg {
+  background-size: 56px 56px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+/* Signature Fekra Premium atmospheric gradients */
+.fekra-hero-mesh {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(45, 114, 181, 0.42) 0%, transparent 45%),
+    radial-gradient(circle at 82% 18%, rgba(43, 56, 209, 0.55) 0%, transparent 50%),
+    linear-gradient(160deg, #090b2e 0%, #13156b 48%, #1b3a88 100%);
+}
+
+.fekra-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+/* Soft periwinkle-blue 3D text extrusion */
+.fekra-text-3d {
+  color: #ffffff;
+  text-shadow: 0 4px 0 #4f63db, 0 12px 30px rgba(7, 8, 36, 0.45);
+}
+
+/* Outlined echo stroke text */
+.fekra-echo-stroke {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.18);
+  color: transparent;
+}
+
+/* Smooth GPU-accelerated infinite marquee */
+@keyframes fekra-marquee {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: fekra-marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090b2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b55a8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4778d9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
